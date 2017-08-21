@@ -1,11 +1,5 @@
 import argparse
 import csv
-"""
-with open('passwd', 'rb') as f:
-    reader = csv.reader(f, delimiter=':', quoting=csv.QUOTE_NONE)
-    for row in reader:
-        print(row)
-"""
 
 class ZillowParser:
 
@@ -40,10 +34,16 @@ def main():
     parser = argparse.ArgumentParser(description='Parses Zillow CSVs.')
     parser.add_argument('--file', metavar='file', type=argparse.FileType('r'),
                         help='the file to parse')
+    parser.add_argument('--out', metavar='file',
+                        help='[optional] print out result')
     args = parser.parse_args()
 
     parser = ZillowParser(args.file)
     stream = parser.stream_data()
+
+    if args.out:
+        for val in stream:
+            print(val)
 
 if __name__ == '__main__':
     main()
