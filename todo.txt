@@ -1,0 +1,16 @@
+MVP
+
+Ingestion
+✅  Parse CSVs
+- Orchestration for Ingestion
+- Store in MySQL
+
+Service
+- Add GET endpoint to serve data
+- Deploy to GCP
+
+Frontend
+- Design
+- Deck.gl?
+- Data Analysis
+- Tell a Story
